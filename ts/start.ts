@@ -16,14 +16,6 @@ class AppMain {
     private m_delegate: DelegateClass;
 }
 
-class DelegateClass {
-    constructor() {}
-
-    public StartClicked(event: MouseEvent) {
-        console.log("start clicked");
-    }
-}
-
 ((context: Window) => {
     context.onload = () => {
         myInit(context);

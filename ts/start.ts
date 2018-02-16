@@ -2,8 +2,9 @@ class AppMain {
 
     constructor(context: Window) {
         this.m_startButton = <HTMLButtonElement>(context.document.getElementById("startButton"));
+        this.m_delegate = new DelegateClass();
         this.m_startButton.addEventListener("click", (event: MouseEvent) => {
-            this.StartClicked(event);
+            this.m_delegate.StartClicked(event);
         });
     }
 
@@ -11,11 +12,16 @@ class AppMain {
         console.log("hello");
     }
 
+    private m_startButton: HTMLButtonElement;
+    private m_delegate: DelegateClass;
+}
+
+class DelegateClass {
+    constructor() {}
+
     public StartClicked(event: MouseEvent) {
         console.log("start clicked");
     }
-
-    private m_startButton: HTMLButtonElement;
 }
 
 ((context: Window) => {
